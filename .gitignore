@@ -3,3 +3,6 @@
 
 # Build artifacts
 *.exe
+
+# Node.js artifacts
+node_modules/
