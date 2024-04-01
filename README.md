@@ -9,7 +9,7 @@ which should report entries for "Podman client" and "Podman Engine".  If this do
 podman machine start
 ```
 
-1. Create the devcontainer.  If you don't have the CLI installed, you can do:
+2. Create the devcontainer.  If you don't have the CLI installed, you can do:
 ```bash
 npm install @devcontainer/cli -g
 ```
@@ -24,3 +24,17 @@ winget install -e --id OpenJS.NodeJS.LTS
 ```
 
 (if you've installed `devcontainer` not as a global tool, but under the root of this repository, you may need to prepend `npx` to the command above)
+
+3. Log on to the container and build the project:
+```bash
+npx devcontainer exec --docker-path podman --workspace-folder . bash
+```
+which will open an interactive shell inside the container.  You can then build the project by running
+```bash
+pushd /workspaces/first/src/main
+go build
+```
+Alternatively, you can issue the build command directly from the host by running
+```bash
+npx devcontainer exec --docker-path podman --workspace-folder . go build -o <NAMEFOREXECUTABLE> /workspaces/first/src/main/main.go
+```
