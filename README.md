@@ -38,3 +38,12 @@ Alternatively, you can issue the build command directly from the host by running
 ```bash
 npx devcontainer exec --docker-path podman --workspace-folder . go build -o <NAMEFOREXECUTABLE> /workspaces/first/src/main/main.go
 ```
+
+If you choose to run the container interactively, you can debug by issuing
+```bash
+dlv debug
+```
+
+## Issues
+
+* VSCode somehow fails to build the devcontainer.  For the moment all testing has been done in the cli.
