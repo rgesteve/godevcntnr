@@ -38,6 +38,12 @@ Alternatively, you can issue the build command directly from the host by running
 ```bash
 npx devcontainer exec --docker-path podman --workspace-folder . go build -o <NAMEFOREXECUTABLE> /workspaces/first/src/main/main.go
 ```
+You can do all of this step-by-step too:
+```sh
+devcontainer build --workspace-folder .
+devcontainer up --workspace-folder .
+devcontainer exec --workspace-folder . bash
+```
 
 If you choose to run the container interactively, you can debug by issuing
 ```bash

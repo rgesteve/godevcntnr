@@ -7,6 +7,7 @@ RUN apt-get update \
 RUN go install github.com/go-delve/delve/cmd/dlv@latest
 
 ENV GO111MODULE=off
-# /workspaces is the default location for git clones, but I should be getting "first" from the `devcontainer.json` file 
+# /workspaces is the default location for git clones, but I should be getting "godevcntnr" from the `devcontainer.json` file 
 # or the devcontainer creator invocation
-ENV GOPATH=$GOPATH:/workspaces/first
+ENV GOPATH=$GOPATH:/workspaces/godevcntnr
+
